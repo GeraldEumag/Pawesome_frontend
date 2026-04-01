@@ -1,6 +1,6 @@
-/* Inventory Dashboard Styles - Based on Admin Dashboard Design */
+/* Manager Dashboard Styles - Based on Admin Dashboard Design */
 
-.inventory-dashboard {
+.manager-dashboard {
   display: flex;
   min-height: 100vh;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
@@ -8,16 +8,16 @@
   color: #102a43;
 }
 
-.inventory-dashboard.dark {
+.manager-dashboard.dark {
   background: #0b1120;
   color: #e2e8f0;
 }
 
-.inventory-dashboard.collapsed .inventory-main {
+.manager-dashboard.collapsed .manager-main {
   margin-left: 90px;
 }
 
-.inventory-main {
+.manager-main {
   flex: 1;
   margin-left: 260px;
   padding: 2rem 2.5rem 3rem;
@@ -28,7 +28,7 @@
 }
 
 /* Navbar Styles */
-.inventory-navbar {
+.manager-navbar {
   position: fixed;
   left: 260px;
   right: 0;
@@ -45,11 +45,11 @@
   box-shadow: 0 12px 35px rgba(16, 42, 67, 0.08);
 }
 
-.inventory-dashboard.collapsed .inventory-navbar {
+.manager-dashboard.collapsed .manager-navbar {
   left: 90px;
 }
 
-.inventory-dashboard.dark .inventory-navbar {
+.manager-dashboard.dark .manager-navbar {
   background: rgba(10, 18, 34, 0.96);
   border-color: rgba(148, 163, 184, 0.12);
 }
@@ -66,7 +66,7 @@
   font-size: 0.95rem;
 }
 
-.inventory-dashboard.dark .navbar-left p {
+.manager-dashboard.dark .navbar-left p {
   color: #94a3b8;
 }
 
@@ -97,7 +97,7 @@
   color: #102a43;
 }
 
-.inventory-dashboard.dark .search-group input {
+.manager-dashboard.dark .search-group input {
   border-color: #334155;
   background: #111827;
   color: #e2e8f0;
@@ -108,7 +108,7 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.inventory-profile-btn {
+.manager-profile-btn {
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -123,7 +123,7 @@
   transition: all 0.2s ease;
 }
 
-.inventory-profile-btn:hover {
+.manager-profile-btn:hover {
   background: #e0e7ff;
   color: #1d4ed8;
 }
@@ -155,7 +155,7 @@
   opacity: 0.8;
 }
 
-.inventory-dashboard.dark .inventory-profile-btn {
+.manager-dashboard.dark .manager-profile-btn {
   background: #1e293b;
   color: #e2e8f0;
 }
@@ -199,9 +199,9 @@
   font-weight: 700;
 }
 
-.inventory-dashboard.dark .icon-btn,
-.inventory-dashboard.dark .theme-toggle-btn,
-.inventory-dashboard.dark .inventory-profile-btn {
+.manager-dashboard.dark .icon-btn,
+.manager-dashboard.dark .theme-toggle-btn,
+.manager-dashboard.dark .manager-profile-btn {
   background: #1e293b;
   color: #e2e8f0;
 }
@@ -230,7 +230,7 @@
   box-shadow: 0 15px 40px rgba(16, 42, 67, 0.12);
 }
 
-.inventory-dashboard.dark .overview-card {
+.manager-dashboard.dark .overview-card {
   background: #0f172a;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
 }
@@ -248,7 +248,7 @@
   font-size: 0.95rem;
 }
 
-.inventory-dashboard.dark .overview-card p {
+.manager-dashboard.dark .overview-card p {
   color: #94a3b8;
 }
 
@@ -261,7 +261,7 @@
   font-weight: 600;
 }
 
-.inventory-dashboard.dark .overview-card span {
+.manager-dashboard.dark .overview-card span {
   background: #1e293b;
   color: #c7d2fe;
 }
@@ -281,7 +281,7 @@
   overflow: hidden;
 }
 
-.inventory-dashboard.dark .panel {
+.manager-dashboard.dark .panel {
   background: #0f172a;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
 }
@@ -291,7 +291,7 @@
   border-bottom: 1px solid #f1f5f9;
 }
 
-.inventory-dashboard.dark .panel-header {
+.manager-dashboard.dark .panel-header {
   border-color: #334155;
 }
 
@@ -308,11 +308,11 @@
   font-size: 0.95rem;
 }
 
-.inventory-dashboard.dark .panel-header h2 {
+.manager-dashboard.dark .panel-header h2 {
   color: #f8fafc;
 }
 
-.inventory-dashboard.dark .panel-header p {
+.manager-dashboard.dark .panel-header p {
   color: #94a3b8;
 }
 
@@ -326,18 +326,18 @@
   font-weight: 600;
 }
 
-.inventory-dashboard.dark .badge,
-.inventory-dashboard.dark .status-badge {
+.manager-dashboard.dark .badge,
+.manager-dashboard.dark .status-badge {
   background: #1e293b;
   color: #c7d2fe;
 }
 
-/* Activity List */
-.activity-list {
+/* Team Performance */
+.performance-list {
   padding: 2rem;
 }
 
-.activity-item {
+.performance-item {
   background: #f8fafc;
   border-radius: 16px;
   padding: 1.5rem;
@@ -346,69 +346,133 @@
   transition: transform 0.2s ease;
 }
 
-.activity-item:hover {
+.performance-item:hover {
   transform: translateY(-1px);
 }
 
-.inventory-dashboard.dark .activity-item {
+.manager-dashboard.dark .performance-item {
   background: #111827;
 }
 
-.activity-header {
+.performance-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
 }
 
-.activity-info h3 {
+.performance-info h3 {
   margin: 0 0 0.25rem 0;
   color: #0f172a;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.activity-info p {
+.performance-info p {
   margin: 0;
   color: #64748b;
   font-size: 0.9rem;
 }
 
-.inventory-dashboard.dark .activity-info h3 {
+.manager-dashboard.dark .performance-info h3 {
   color: #f8fafc;
 }
 
-.inventory-dashboard.dark .activity-info p {
+.manager-dashboard.dark .performance-info p {
   color: #94a3b8;
 }
 
-.activity-quantity {
-  text-align: right;
-}
-
-.activity-quantity strong {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1d4ed8;
-  margin-bottom: 0.25rem;
-}
-
-.activity-details {
+.performance-metrics {
   display: flex;
   gap: 1.5rem;
   font-size: 0.85rem;
   color: #64748b;
 }
 
-.inventory-dashboard.dark .activity-details {
+.manager-dashboard.dark .performance-metrics {
   color: #94a3b8;
 }
 
-.activity-details span {
+.performance-metrics span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.efficiency-score {
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Task Management */
+.task-list {
+  padding: 2rem;
+}
+
+.task-item {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #3b82f6;
+  transition: transform 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-1px);
+}
+
+.manager-dashboard.dark .task-item {
+  background: #111827;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.task-title {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.manager-dashboard.dark .task-title {
+  color: #f8fafc;
+}
+
+.task-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.task-status.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.task-status.in-progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.task-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.task-details {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.manager-dashboard.dark .task-details {
+  color: #94a3b8;
 }
 
 /* Quick Stat Panel */
@@ -431,7 +495,7 @@
   transform: translateY(-1px);
 }
 
-.inventory-dashboard.dark .metric-card {
+.manager-dashboard.dark .metric-card {
   background: #111827;
 }
 
@@ -439,7 +503,7 @@
   background: #eef2ff;
 }
 
-.inventory-dashboard.dark .metric-card.accent {
+.manager-dashboard.dark .metric-card.accent {
   background: #1e293b;
 }
 
@@ -457,11 +521,11 @@
   color: #0f172a;
 }
 
-.inventory-dashboard.dark .metric-card h3 {
+.manager-dashboard.dark .metric-card h3 {
   color: #60a5fa;
 }
 
-.inventory-dashboard.dark .metric-card p {
+.manager-dashboard.dark .metric-card p {
   color: #f8fafc;
 }
 
@@ -470,7 +534,7 @@
   color: #64748b;
 }
 
-.inventory-dashboard.dark .metric-card small {
+.manager-dashboard.dark .metric-card small {
   color: #94a3b8;
 }
 
@@ -499,96 +563,8 @@
   color: #2563eb;
 }
 
-/* Stock Categories */
-.stock-categories {
-  padding: 2rem;
-}
-
-.stock-category-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 16px;
-  margin-bottom: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.stock-category-item:hover {
-  transform: translateY(-1px);
-}
-
-.inventory-dashboard.dark .stock-category-item {
-  background: #111827;
-}
-
-.category-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #3b82f6;
-  color: #fff;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.category-info {
-  flex: 1;
-}
-
-.category-info h4 {
-  margin: 0 0 0.25rem 0;
-  color: #0f172a;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.category-info p {
-  margin: 0;
-  color: #64748b;
-  font-size: 0.85rem;
-}
-
-.inventory-dashboard.dark .category-info h4 {
-  color: #f8fafc;
-}
-
-.inventory-dashboard.dark .category-info p {
-  color: #94a3b8;
-}
-
-.category-status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #64748b;
-}
-
-.inventory-dashboard.dark .category-status {
-  color: #94a3b8;
-}
-
-.status-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.status-indicator.good {
-  background: #22c55e;
-}
-
-.status-indicator.warning {
-  background: #f59e0b;
-}
-
-/* Inventory Analytics */
-.inventory-metrics {
+/* Analytics */
+.analytics-metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -605,9 +581,9 @@
   text-align: center;
 }
 
-.inventory-dashboard.dark .status-card,
-.inventory-dashboard.dark .chart-placeholder,
-.inventory-dashboard.dark .mini-chart-placeholder {
+.manager-dashboard.dark .status-card,
+.manager-dashboard.dark .chart-placeholder,
+.manager-dashboard.dark .mini-chart-placeholder {
   background: #0f172a;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
 }
@@ -617,19 +593,19 @@
   color: #166534;
 }
 
-.status-card.warning {
-  background: #fef3c7;
-  color: #92400e;
+.status-card.info {
+  background: #d1ecf1;
+  color: #0c5460;
 }
 
-.inventory-dashboard.dark .status-card.success {
+.manager-dashboard.dark .status-card.success {
   background: #164e3b;
   color: #d1fae5;
 }
 
-.inventory-dashboard.dark .status-card.warning {
-  background: #78350f;
-  color: #fef3c7;
+.manager-dashboard.dark .status-card.info {
+  background: #164e3b;
+  color: #d1fae5;
 }
 
 .status-card strong {
@@ -654,7 +630,7 @@
   font-size: 0.9rem;
 }
 
-.inventory-dashboard.dark .mini-chart-placeholder {
+.manager-dashboard.dark .mini-chart-placeholder {
   color: #94a3b8;
 }
 
@@ -682,20 +658,20 @@
 }
 
 @media (max-width: 768px) {
-  .inventory-main {
+  .manager-main {
     margin-left: 0;
     padding: 1rem;
     padding-top: 120px;
   }
   
-  .inventory-navbar {
+  .manager-navbar {
     left: 0;
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
   }
   
-  .inventory-dashboard.collapsed .inventory-navbar {
+  .manager-dashboard.collapsed .manager-navbar {
     left: 0;
   }
   
@@ -714,17 +690,12 @@
     gap: 1rem;
   }
   
-  .inventory-metrics {
+  .analytics-metrics {
     grid-template-columns: 1fr;
   }
   
-  .activity-details {
+  .performance-metrics {
     flex-direction: column;
     gap: 0.5rem;
-  }
-  
-  .stock-category-item {
-    flex-direction: column;
-    text-align: center;
   }
 }

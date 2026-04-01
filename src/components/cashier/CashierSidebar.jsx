@@ -1,7 +1,16 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCashRegister, faHistory, faChartBar, faUserCircle, faSignOutAlt, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faCashRegister,
+  faHistory,
+  faChartBar,
+  faSignOutAlt,
+  faBars,
+  faUser,
+  faReceipt,
+} from "@fortawesome/free-solid-svg-icons";
 import "./CashierSidebar.css";
 
 const CashierSidebar = ({ collapsed, onToggleCollapse }) => {
@@ -16,52 +25,92 @@ const CashierSidebar = ({ collapsed, onToggleCollapse }) => {
 
   return (
     <aside className={`cashier-sidebar ${collapsed ? "collapsed" : ""}`}>
-      <div className="sidebar-logo">
-        <FontAwesomeIcon icon={faCashRegister} className="logo-icon" />
-        {!collapsed && (
-          <div className="logo-text">
-            <h2>Cashier</h2>
-            <p>POS panel</p>
-          </div>
-        )}
-        <button className="collapse-btn" type="button" onClick={onToggleCollapse}>
+      <div className="sidebar-header">
+        <button className="collapse-btn" onClick={onToggleCollapse}>
           <FontAwesomeIcon icon={faBars} />
         </button>
+        {!collapsed && (
+          <div className="sidebar-logo">
+            <FontAwesomeIcon icon={faCashRegister} />
+            <span>Cashier Portal</span>
+          </div>
+        )}
       </div>
 
       <nav className="sidebar-nav">
-        <ul>
-          <li>
-            <NavLink to="/cashier/pos" className={({ isActive }) => (isActive ? "active" : "") }>
-              <FontAwesomeIcon icon={faCashRegister} className="nav-icon" />
-              <span>POS</span>
+        <ul className="nav-list">
+          <li className="nav-item">
+            <NavLink
+              to="/cashier"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="Dashboard"
+            >
+              <FontAwesomeIcon icon={faHome} />
+              {!collapsed && <span>Dashboard</span>}
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/cashier/history" className={({ isActive }) => (isActive ? "active" : "") }>
-              <FontAwesomeIcon icon={faHistory} className="nav-icon" />
-              <span>History</span>
+          
+          <li className="nav-item">
+            <NavLink
+              to="/cashier/pos"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="POS"
+            >
+              <FontAwesomeIcon icon={faCashRegister} />
+              {!collapsed && <span>POS</span>}
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/cashier/reports" className={({ isActive }) => (isActive ? "active" : "") }>
-              <FontAwesomeIcon icon={faChartBar} className="nav-icon" />
-              <span>Reports</span>
+          
+          <li className="nav-item">
+            <NavLink
+              to="/cashier/transactions"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="Transactions"
+            >
+              <FontAwesomeIcon icon={faReceipt} />
+              {!collapsed && <span>Transactions</span>}
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/cashier/profile" className={({ isActive }) => (isActive ? "active" : "") }>
-              <FontAwesomeIcon icon={faUserCircle} className="nav-icon" />
-              <span>Profile</span>
+          
+          <li className="nav-item">
+            <NavLink
+              to="/cashier/history"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="History"
+            >
+              <FontAwesomeIcon icon={faHistory} />
+              {!collapsed && <span>History</span>}
+            </NavLink>
+          </li>
+          
+          <li className="nav-item">
+            <NavLink
+              to="/cashier/reports"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="Reports"
+            >
+              <FontAwesomeIcon icon={faChartBar} />
+              {!collapsed && <span>Reports</span>}
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink
+              to="/cashier/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              title="Profile"
+            >
+              <FontAwesomeIcon icon={faUser} />
+              {!collapsed && <span>Profile</span>}
             </NavLink>
           </li>
         </ul>
       </nav>
 
       <div className="sidebar-footer">
-        <button type="button" className="logout-btn" onClick={handleLogout}>
-          <FontAwesomeIcon icon={faSignOutAlt} className="nav-icon" />
-          <span>Logout</span>
+        <button className="logout-btn" onClick={handleLogout} title="Logout">
+          <FontAwesomeIcon icon={faSignOutAlt} />
+          {!collapsed && <span>Logout</span>}
         </button>
       </div>
     </aside>

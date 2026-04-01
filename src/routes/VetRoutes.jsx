@@ -7,6 +7,7 @@ import VetHistory from "../components/veterinary/VetHistory";
 import VetCustomerProfiles from "../components/veterinary/VetCustomerProfiles";
 import VetReports from "../components/veterinary/VetReports";
 import VetReceipt from "../components/veterinary/VetReceipt";
+import VetProfile from "../components/veterinary/VetProfile";
 
 const VetRoutes = () => (
   <Routes>
@@ -27,6 +28,7 @@ const VetRoutes = () => (
       <Route path="customers" element={<VetCustomerProfiles customers={[]} />} />
       <Route path="reports" element={<VetReports appointments={[]} />} />
       <Route path="receipt" element={<VetReceipt receipt={{}} />} />
+      <Route path="profile" element={<VetProfile />} />
     </Route>
   </Routes>
 );

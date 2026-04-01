@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUserShield,
+  faUserMd,
   faEnvelope,
   faPhone,
   faMapMarkerAlt,
@@ -10,50 +10,47 @@ import {
   faEdit,
   faCamera,
   faGraduationCap,
-  faCog,
+  faStethoscope,
+  faLanguage,
   faCalendarAlt,
   faSave,
-  faBuilding,
-  faKey,
-  faBell,
-  faHistory,
 } from "@fortawesome/free-solid-svg-icons";
-import "./AdminProfile.css";
+import "./VetProfile.css";
 
-const AdminProfile = () => {
+const VetProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
     personalInfo: {
-      firstName: "Admin",
-      lastName: "User",
-      email: "admin@pawesomeretreat.com",
-      phone: "+1 (555) 987-6543",
-      address: "456 Admin Tower, Management City, MC 67890",
-      joinDate: "January 2024",
-      department: "System Administration",
+      firstName: "Dr. Sarah",
+      lastName: "Johnson",
+      email: "sarah.johnson@pawesomeretreat.com",
+      phone: "+1 (555) 123-4567",
+      address: "123 Pet Care Lane, Animal City, AC 12345",
+      joinDate: "January 15, 2020",
+      languages: ["English", "Spanish"],
     },
     professional: {
-      employeeId: "ADMIN-2024-001",
-      role: "System Administrator",
-      accessLevel: "Full System Access",
-      experience: "5 years",
+      licenseNumber: "VET-2020-12345",
+      specialization: "Small Animal Medicine",
+      experience: "8 years",
+      education: "Doctor of Veterinary Medicine - University of Animal Health",
       certifications: [
-        "System Administration Certification",
-        "Network Security Professional",
-        "Database Management Expert",
+        "American Veterinary Medical Association (AVMA)",
+        "Board Certified in Small Animal Medicine",
+        "Advanced Surgical Training Certificate",
       ],
-      responsibilities: [
-        "User Management",
-        "System Configuration",
-        "Security Oversight",
-        "Report Generation",
+      specialties: [
+        "Internal Medicine",
+        "Surgery",
+        "Preventive Care",
+        "Dental Care",
       ],
     },
     stats: {
-      totalUsersManaged: 156,
-      systemUptime: "99.9%",
-      securityIncidents: 2,
-      efficiencyScore: 95,
+      totalPatients: 1247,
+      surgeriesPerformed: 342,
+      consultations: 892,
+      satisfactionRate: 98,
     },
   });
 
@@ -85,13 +82,13 @@ const AdminProfile = () => {
   };
 
   return (
-    <div className="admin-profile">
+    <div className="vet-profile">
       <div className="profile-header">
         <div className="profile-title">
           <h2>
-            <FontAwesomeIcon icon={faUserShield} /> Administrator Profile
+            <FontAwesomeIcon icon={faUserMd} /> Veterinarian Profile
           </h2>
-          <p>Manage your administrative credentials and system access</p>
+          <p>Manage your professional information and credentials</p>
         </div>
         {!isEditing && (
           <button className="edit-profile-btn" onClick={handleEdit}>
@@ -106,16 +103,16 @@ const AdminProfile = () => {
           <div className="profile-avatar-section">
             <div className="avatar-container">
               <div className="avatar">
-                <FontAwesomeIcon icon={faUserShield} />
+                <FontAwesomeIcon icon={faUserMd} />
                 <button className="camera-btn">
                   <FontAwesomeIcon icon={faCamera} />
                 </button>
               </div>
               <div className="avatar-info">
                 <h3>
-                  {profileData.personalInfo.firstName} {profileData.personalInfo.lastName}
+                  Dr. {profileData.personalInfo.firstName} {profileData.personalInfo.lastName}
                 </h3>
-                <p>{profileData.professional.role}</p>
+                <p>{profileData.professional.specialization}</p>
                 <div className="member-since">
                   <FontAwesomeIcon icon={faCalendarAlt} />
                   <span>Member since {profileData.personalInfo.joinDate}</span>
@@ -127,20 +124,20 @@ const AdminProfile = () => {
           {/* Quick Stats */}
           <div className="profile-stats">
             <div className="stat-item">
-              <div className="stat-number">{profileData.stats.totalUsersManaged}</div>
-              <div className="stat-label">Users Managed</div>
+              <div className="stat-number">{profileData.stats.totalPatients}</div>
+              <div className="stat-label">Total Patients</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">{profileData.stats.systemUptime}</div>
-              <div className="stat-label">System Uptime</div>
+              <div className="stat-number">{profileData.stats.surgeriesPerformed}</div>
+              <div className="stat-label">Surgeries</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">{profileData.stats.securityIncidents}</div>
-              <div className="stat-label">Security Events</div>
+              <div className="stat-number">{profileData.stats.consultations}</div>
+              <div className="stat-label">Consultations</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">{profileData.stats.efficiencyScore}%</div>
-              <div className="stat-label">Efficiency</div>
+              <div className="stat-number">{profileData.stats.satisfactionRate}%</div>
+              <div className="stat-label">Satisfaction</div>
             </div>
           </div>
         </div>
@@ -150,7 +147,7 @@ const AdminProfile = () => {
           <div className="profile-card">
             <div className="card-header">
               <h3>
-                <FontAwesomeIcon icon={faUserShield} /> Personal Information
+                <FontAwesomeIcon icon={faUserMd} /> Personal Information
               </h3>
             </div>
             <div className="card-content">
@@ -231,25 +228,25 @@ const AdminProfile = () => {
                     <span>{profileData.personalInfo.address}</span>
                   )}
                 </div>
-                <div className="info-item">
-                  <label>Department</label>
+                <div className="info-item full-width">
+                  <label>
+                    <FontAwesomeIcon icon={faLanguage} /> Languages
+                  </label>
                   {isEditing ? (
                     <input
                       type="text"
-                      value={editedData.personalInfo.department}
+                      value={editedData.personalInfo.languages.join(", ")}
                       onChange={(e) =>
-                        handleInputChange("personalInfo", "department", e.target.value)
+                        handleInputChange(
+                          "personalInfo",
+                          "languages",
+                          e.target.value.split(", ").map(lang => lang.trim())
+                        )
                       }
                     />
                   ) : (
-                    <span>{profileData.personalInfo.department}</span>
+                    <span>{profileData.personalInfo.languages.join(", ")}</span>
                   )}
-                </div>
-                <div className="info-item">
-                  <label>
-                    <FontAwesomeIcon icon={faClock} /> Join Date
-                  </label>
-                  <span>{profileData.personalInfo.joinDate}</span>
                 </div>
               </div>
             </div>
@@ -259,51 +256,37 @@ const AdminProfile = () => {
           <div className="profile-card">
             <div className="card-header">
               <h3>
-                <FontAwesomeIcon icon={faCog} /> Professional Information
+                <FontAwesomeIcon icon={faGraduationCap} /> Professional Information
               </h3>
             </div>
             <div className="card-content">
               <div className="info-grid">
                 <div className="info-item full-width">
-                  <label>Employee ID</label>
+                  <label>License Number</label>
                   {isEditing ? (
                     <input
                       type="text"
-                      value={editedData.professional.employeeId}
+                      value={editedData.professional.licenseNumber}
                       onChange={(e) =>
-                        handleInputChange("professional", "employeeId", e.target.value)
+                        handleInputChange("professional", "licenseNumber", e.target.value)
                       }
                     />
                   ) : (
-                    <span>{profileData.professional.employeeId}</span>
+                    <span>{profileData.professional.licenseNumber}</span>
                   )}
                 </div>
                 <div className="info-item full-width">
-                  <label>System Role</label>
+                  <label>Specialization</label>
                   {isEditing ? (
                     <input
                       type="text"
-                      value={editedData.professional.role}
+                      value={editedData.professional.specialization}
                       onChange={(e) =>
-                        handleInputChange("professional", "role", e.target.value)
+                        handleInputChange("professional", "specialization", e.target.value)
                       }
                     />
                   ) : (
-                    <span>{profileData.professional.role}</span>
-                  )}
-                </div>
-                <div className="info-item full-width">
-                  <label>Access Level</label>
-                  {isEditing ? (
-                    <input
-                      type="text"
-                      value={editedData.professional.accessLevel}
-                      onChange={(e) =>
-                        handleInputChange("professional", "accessLevel", e.target.value)
-                      }
-                    />
-                  ) : (
-                    <span>{profileData.professional.accessLevel}</span>
+                    <span>{profileData.professional.specialization}</span>
                   )}
                 </div>
                 <div className="info-item">
@@ -320,6 +303,26 @@ const AdminProfile = () => {
                     <span>{profileData.professional.experience}</span>
                   )}
                 </div>
+                <div className="info-item">
+                  <label>
+                    <FontAwesomeIcon icon={faClock} /> Join Date
+                  </label>
+                  <span>{profileData.personalInfo.joinDate}</span>
+                </div>
+                <div className="info-item full-width">
+                  <label>Education</label>
+                  {isEditing ? (
+                    <textarea
+                      value={editedData.professional.education}
+                      onChange={(e) =>
+                        handleInputChange("professional", "education", e.target.value)
+                      }
+                      rows="2"
+                    />
+                  ) : (
+                    <span>{profileData.professional.education}</span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -328,7 +331,7 @@ const AdminProfile = () => {
           <div className="profile-card full-width">
             <div className="card-header">
               <h3>
-                <FontAwesomeIcon icon={faAward} /> Certifications & Qualifications
+                <FontAwesomeIcon icon={faAward} /> Certifications & Awards
               </h3>
             </div>
             <div className="card-content">
@@ -347,19 +350,19 @@ const AdminProfile = () => {
             </div>
           </div>
 
-          {/* Responsibilities */}
+          {/* Specialties */}
           <div className="profile-card full-width">
             <div className="card-header">
               <h3>
-                <FontAwesomeIcon icon={faBuilding} /> System Responsibilities
+                <FontAwesomeIcon icon={faStethoscope} /> Medical Specialties
               </h3>
             </div>
             <div className="card-content">
               <div className="specialties-grid">
-                {profileData.professional.responsibilities.map((responsibility, index) => (
+                {profileData.professional.specialties.map((specialty, index) => (
                   <div key={index} className="specialty-item">
-                    <FontAwesomeIcon icon={faCog} />
-                    <span>{responsibility}</span>
+                    <FontAwesomeIcon icon={faStethoscope} />
+                    <span>{specialty}</span>
                   </div>
                 ))}
               </div>
@@ -383,4 +386,4 @@ const AdminProfile = () => {
   );
 };
 
-export default AdminProfile;
+export default VetProfile;
