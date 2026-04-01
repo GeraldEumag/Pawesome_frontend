@@ -1,0 +1,61 @@
+.create-user {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 600px;   /* limit width */
+  margin: 0 auto;     /* center horizontally */
+}
+
+.create-user h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #0d6efd;
+  text-align: center;
+}
+
+.create-user-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two-column layout */
+  gap: 1rem 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* Make password and button span full width */
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.create-btn {
+  grid-column: span 2;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.create-btn:hover {
+  background: #0b5ed7;
+}

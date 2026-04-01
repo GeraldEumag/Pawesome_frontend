@@ -1,0 +1,29 @@
+.veterinary-sidebar {
+  width: 220px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+
+.veterinary-sidebar h3 {
+  margin-bottom: 1rem;
+}
+
+.veterinary-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.veterinary-sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.veterinary-sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.veterinary-sidebar a.active {
+  font-weight: bold;
+  color: #007bff;
+}

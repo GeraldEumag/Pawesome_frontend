@@ -1,0 +1,277 @@
+/* ===== Base layout ===== */
+.customer-dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.customer-dashboard.light {
+  background: #fff;
+  color: #000;
+}
+
+.customer-dashboard.dark {
+  background: #4d3636;
+  color: #e0e0e0;
+}
+
+/* ===== Sidebar ===== */
+.customer-sidebar {
+  width: 240px;
+  background: #94bbe2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* ===== Main content ===== */
+.customer-main {
+  flex: 1;
+  margin-left: 240px; /* space for sidebar */
+  padding: 2rem;
+  padding-top: 160px; /* space for two fixed navbars */
+  box-sizing: border-box;
+  min-height: 100vh;
+  transition: margin-left 0.25s ease;
+}
+
+.customer-dashboard.collapsed .customer-main {
+  margin-left: 90px;
+}
+
+/* ===== Shared navbar styles ===== */
+.customer-navbar {
+  position: fixed;
+  left: 240px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0 2rem;
+  z-index: 1200;
+  border-bottom: 1px solid rgba(147, 161, 175, 0.18);
+  box-shadow: 0 8px 22px rgba(16, 42, 67, 0.08);
+  transition: left 0.25s ease;
+}
+
+.customer-dashboard.collapsed .customer-navbar {
+  left: 90px;
+}
+
+/* Top navbar (greeting + actions) */
+.top-navbar {
+  top: 0;
+  height: 80px;
+  justify-content: space-between;
+}
+
+.top-navbar h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.top-navbar p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Second navbar (search only) */
+.action-navbar {
+  top: 100px;
+  height: 60px;
+  justify-content: flex-start;
+}
+
+.search-bar {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 250px; /* ✅ constrained width */
+  font-size: 0.9rem;
+}
+
+/* Right side buttons (top navbar only) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+
+.add-btn,
+.theme-toggle-btn {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn:hover,
+.theme-toggle-btn:hover {
+  background: #0b5ed7;
+}
+
+/* Profile block */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-name {
+  font-weight: bold;
+}
+
+.profile-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== Overview cards ===== */
+.dashboard-overview {
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #0d6efd;
+}
+
+.stat-card p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== Booking history table ===== */
+.booking-section {
+  margin-top: 2rem;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.booking-table th {
+  background: #f8f9fa;
+}
+
+.status.active {
+  color: green;
+  font-weight: 600;
+}
+
+.status.completed {
+  color: gray;
+  font-weight: 600;
+}
+
+/* ===== Edit profile button ===== */
+.edit-profile {
+  margin-top: 2rem;
+}
+
+.edit-profile-btn {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-profile-btn:hover {
+  background: #0b5ed7;
+}
+
+/* ===== Dark theme overrides ===== */
+.customer-dashboard.dark .customer-navbar {
+  background: #1e1e1e;
+  border-bottom-color: #333;
+}
+
+.customer-dashboard.dark .top-navbar {
+  border-bottom-color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.customer-dashboard.dark .action-navbar {
+  border-bottom-color: #333;
+  background: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.customer-dashboard.dark .top-navbar p,
+.customer-dashboard.dark .profile-role {
+  color: #bdbdbd;
+}
+
+.customer-dashboard.dark .stat-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.customer-dashboard.dark .stat-card p {
+  color: #bdbdbd;
+}
+
+.customer-dashboard.dark .add-btn,
+.customer-dashboard.dark .theme-toggle-btn,
+.customer-dashboard.dark .edit-profile-btn {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.customer-dashboard.dark .add-btn:hover,
+.customer-dashboard.dark .theme-toggle-btn:hover,
+.customer-dashboard.dark .edit-profile-btn:hover {
+  background: #3b3b3b;
+}

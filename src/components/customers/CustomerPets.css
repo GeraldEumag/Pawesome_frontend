@@ -1,0 +1,137 @@
+.customer-pets {
+  padding: 1rem; /* slightly smaller padding */
+}
+
+.pets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* tighter spacing */
+}
+
+.pets-greeting h1 {
+  margin: 0;
+  color: #0d6efd;
+  font-size: 1.2rem; /* smaller heading */
+}
+
+.pets-greeting p {
+  margin: 0.2rem 0 0;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.pets-actions {
+  display: flex;
+  gap: 0.6rem; /* reduced gap */
+}
+
+.search-bar {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.add-btn {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.add-btn:hover {
+  background: #0b5ed7;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* ✅ tighter columns */
+  gap: 0.5rem; /* ✅ smaller gap so cards are closer */
+}
+
+.pet-card {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.6rem; /* ✅ reduced padding */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  font-size: 0.8rem; /* ✅ smaller text */
+}
+
+.pet-card h2 {
+  margin: 0.2rem 0;
+  font-size: 0.95rem; /* smaller heading */
+  color: #0d6efd;
+}
+
+.pet-breed {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.pet-health {
+  font-weight: 600;
+  color: green;
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+}
+
+.pet-details {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.pet-details li {
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.pet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem; /* tighter button spacing */
+}
+
+.edit-btn,
+.history-btn,
+.upload-btn {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem; /* smaller buttons */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.edit-btn:hover,
+.history-btn:hover,
+.upload-btn:hover {
+  background: #0b5ed7;
+}
+
+/* Photo styling */
+.pet-photo {
+  width: 100%;
+  height: auto;
+  max-height: 100px; /* ✅ smaller photo height */
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+}
+
+.pet-photo.placeholder {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 0.75rem;
+  height: 90px; /* smaller placeholder */
+}
