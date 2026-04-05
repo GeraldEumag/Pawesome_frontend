@@ -1,11 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
-import PayrollDashboard from "../components/admin/payroll/PayrollDashboard";
-import PayrollReports from "../components/admin/payroll/PayrollReports";
-import PayrollStaff from "../components/admin/payroll/PayrollStaff";
-import EmployeeSalaries from "../components/admin/payroll/EmployeeSalaries";
-import GeneratePayslip from "../components/admin/payroll/GeneratePayslip";
+import AdminPayroll from "../components/admin/AdminPayroll";
+import PayrollReports from "../components/admin/PayrollReports";
+import EmployeeSalaryManagement from "../components/admin/EmployeeSalaryManagement";
 
 const PayrollRoutes = () => (
   <Routes>
@@ -13,18 +11,16 @@ const PayrollRoutes = () => (
       path="/*"
       element={
         <ProtectedRoute>
-          <PayrollDashboard />
+          <AdminPayroll />
         </ProtectedRoute>
       }
     >
       {/* Default landing page */}
-      <Route index element={<PayrollReports />} />
+      <Route index element={<AdminPayroll />} />
 
       {/* Nested routes */}
       <Route path="reports" element={<PayrollReports />} />
-      <Route path="staff" element={<PayrollStaff />} />
-      <Route path="salaries" element={<EmployeeSalaries />} />
-      <Route path="payslip" element={<GeneratePayslip />} />
+      <Route path="salaries" element={<EmployeeSalaryManagement />} />
     </Route>
   </Routes>
 );

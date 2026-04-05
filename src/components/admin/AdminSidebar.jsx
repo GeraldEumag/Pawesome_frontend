@@ -11,10 +11,16 @@ import {
   faBars,
   faUser,
   faBuilding,
+  faMoneyBillWave,
+  faChevronDown,
+  faChevronRight,
+  faDollarSign,
+  faFileInvoiceDollar,
 } from "@fortawesome/free-solid-svg-icons";
 import "./AdminSidebar.css";
 
 const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
+  const [payrollExpanded, setPayrollExpanded] = React.useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -74,6 +80,57 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
               <FontAwesomeIcon icon={faUser} />
               {!collapsed && <span>Profile</span>}
             </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <div 
+              className="nav-dropdown-header"
+              onClick={() => !collapsed && setPayrollExpanded(!payrollExpanded)}
+              title="Payroll"
+            >
+              <FontAwesomeIcon icon={faMoneyBillWave} />
+              {!collapsed && <span>Payroll</span>}
+              {!collapsed && (
+                <FontAwesomeIcon 
+                  icon={payrollExpanded ? faChevronDown : faChevronRight} 
+                  className="dropdown-arrow"
+                />
+              )}
+            </div>
+            {!collapsed && (
+              <ul className={`nav-sublist ${payrollExpanded ? 'expanded' : ''}`}>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/admin/payroll"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Payroll Overview"
+                  >
+                    <FontAwesomeIcon icon={faMoneyBillWave} />
+                    <span>Payroll Overview</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/admin/payroll/salaries"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Salary Management"
+                  >
+                    <FontAwesomeIcon icon={faDollarSign} />
+                    <span>Salary Management</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/admin/payroll/reports"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Payroll Reports"
+                  >
+                    <FontAwesomeIcon icon={faFileInvoiceDollar} />
+                    <span>Payroll Reports</span>
+                  </NavLink>
+                </li>
+              </ul>
+            )}
           </li>
 
           <li className="nav-item">

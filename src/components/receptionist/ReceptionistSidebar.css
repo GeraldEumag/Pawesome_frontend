@@ -1,8 +1,8 @@
-/* Receptionist Sidebar Styles - Based on Admin Dashboard Design */
+/* Receptionist Sidebar Styles - Pink Theme */
 
 .receptionist-sidebar {
   width: 260px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
   color: white;
   padding: 0;
   position: fixed;
@@ -13,7 +13,7 @@
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 10px rgba(255, 107, 157, 0.3);
 }
 
 .receptionist-sidebar.collapsed {
@@ -98,7 +98,7 @@
 .nav-item a.active {
   background: rgba(255,255,255,0.15);
   color: white;
-  border-left: 4px solid #ffd700;
+  border-left: 4px solid #ffeaa7;
 }
 
 .nav-item a svg {
@@ -161,7 +161,46 @@
 }
 
 .nav-sublist.expanded {
-  max-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for booking dropdown */
+.nav-sublist.expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nav-sublist.expanded::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.nav-sublist.expanded::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  min-height: 20px;
+}
+
+.nav-sublist.expanded::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.nav-sublist.expanded::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Firefox scrollbar support */
+.nav-sublist.expanded {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.05);
+}
+
+.nav-sublist.expanded:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.05);
 }
 
 .nav-subitem {
@@ -203,6 +242,54 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Special background for Vet Appointments */
+.nav-subitem:nth-child(2) a {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 3px solid #28a745;
+}
+
+.nav-subitem:nth-child(2) a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 3px solid #20c997;
+}
+
+.nav-subitem:nth-child(2) a.active {
+  background: rgba(40, 167, 69, 0.15);
+  border-left: 3px solid #28a745;
+}
+
+/* Special background for Hotel Bookings */
+.nav-subitem:nth-child(1) a {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 3px solid #007bff;
+}
+
+.nav-subitem:nth-child(1) a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 3px solid #0056b3;
+}
+
+.nav-subitem:nth-child(1) a.active {
+  background: rgba(0, 123, 255, 0.15);
+  border-left: 3px solid #007bff;
+}
+
+/* Special background for Grooming */
+.nav-subitem:nth-child(3) a {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 3px solid #6f42c1;
+}
+
+.nav-subitem:nth-child(3) a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 3px solid #5a32a3;
+}
+
+.nav-subitem:nth-child(3) a.active {
+  background: rgba(111, 66, 193, 0.15);
+  border-left: 3px solid #6f42c1;
 }
 
 /* Sidebar Footer */

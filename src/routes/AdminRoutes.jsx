@@ -8,15 +8,13 @@ import AdminReports from "../components/admin/AdminReports";
 import ManageUsers from "../components/admin/ManageUsers";
 import CreateUser from "../components/admin/CreateUser";
 import LoginHistory from "../components/admin/LoginHistory";
-import Attendance from "../components/admin/Attendance"; // nested under reports
+import Attendance from "../components/admin/Attendance";
 import AdminProfile from "../components/admin/AdminProfile";
 
-// Payroll modules (inside admin folder)
-import PayrollDashboard from "../components/admin/payroll/PayrollDashboard";
-import EmployeeSalaries from "../components/admin/payroll/EmployeeSalaries";
-import GeneratePayslip from "../components/admin/payroll/GeneratePayslip";
-import PayrollReports from "../components/admin/payroll/PayrollReports";
-import PayrollStaff from "../components/admin/payroll/PayrollStaff";
+// Payroll modules
+import AdminPayroll from "../components/admin/AdminPayroll";
+import EmployeeSalaryManagement from "../components/admin/EmployeeSalaryManagement";
+import PayrollReports from "../components/admin/PayrollReports";
 
 const AdminRoutes = () => (
   <Routes>
@@ -41,11 +39,9 @@ const AdminRoutes = () => (
       <Route path="login-history" element={<LoginHistory />} />
 
       {/* Payroll routes */}
-      <Route path="payroll" element={<PayrollDashboard />} />
-      <Route path="payroll/salaries" element={<EmployeeSalaries />} />
-      <Route path="payroll/payslip" element={<GeneratePayslip />} />
+      <Route path="payroll" element={<AdminPayroll />} />
+      <Route path="payroll/salaries" element={<EmployeeSalaryManagement />} />
       <Route path="payroll/reports" element={<PayrollReports />} />
-      <Route path="payroll/staff" element={<PayrollStaff />} />
     </Route>
   </Routes>
 );

@@ -1,13 +1,13 @@
-/* Customer Dashboard Styles - Based on Admin Dashboard Design */
+/* Customer Dashboard Styles - Pink Theme */
 
 .customer-dashboard {
   display: flex;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #ffeaa7 0%, #ffd1dc 50%, #ff6b9d 100%);
 }
 
 .customer-dashboard.dark {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
 }
 
 .customer-dashboard.collapsed .customer-main {
@@ -24,13 +24,14 @@
 
 /* Navbar Styles */
 .customer-navbar {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   padding: 1rem 2rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid rgba(255, 107, 157, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 35px rgba(255, 107, 157, 0.08);
 }
 
 .customer-navbar.top-navbar {
@@ -41,14 +42,18 @@
 
 .navbar-left h1 {
   margin: 0 0 0.25rem 0;
-  color: #333;
+  color: #2d3436;
   font-size: 1.5rem;
   font-weight: 600;
+  background: linear-gradient(135deg, #ff6b9d, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .navbar-left p {
   margin: 0;
-  color: #666;
+  color: #636e72;
   font-size: 0.9rem;
 }
 
@@ -61,16 +66,18 @@
 .search-group input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid #e9ecef;
+  border: 2px solid #ffeaa7;
   border-radius: 8px;
   font-size: 0.9rem;
   transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d3436;
 }
 
 .search-group input:focus {
   outline: none;
-  border-color: #764ba2;
-  box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+  border-color: #ff6b9d;
+  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
 }
 
 .navbar-actions {
@@ -84,22 +91,23 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem;
-  background: #f8f9fa;
+  background: rgba(255, 107, 157, 0.1);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
   text-decoration: none;
+  border: 1px solid rgba(255, 107, 157, 0.2);
 }
 
 .customer-profile-btn:hover {
-  background: #e9ecef;
+  background: rgba(255, 107, 157, 0.2);
 }
 
 .profile-avatar-icon {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6b9d, #ff4757);
   border-radius: 50%;
   display: flex;
   align-items: center;

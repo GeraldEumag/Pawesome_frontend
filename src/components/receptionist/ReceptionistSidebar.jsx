@@ -105,6 +105,56 @@ const ReceptionistSidebar = ({ collapsed, onToggleCollapse }) => {
                     <span>Grooming</span>
                   </NavLink>
                 </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/receptionist/bookings/daycare"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Daycare"
+                  >
+                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <span>Daycare Services</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/receptionist/bookings/training"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Training"
+                  >
+                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <span>Training Classes</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/receptionist/bookings/emergency"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Emergency"
+                  >
+                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <span>Emergency Care</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/receptionist/bookings/boarding"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Boarding"
+                  >
+                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <span>Extended Boarding</span>
+                  </NavLink>
+                </li>
+                <li className="nav-subitem">
+                  <NavLink
+                    to="/receptionist/bookings/special"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    title="Special Services"
+                  >
+                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <span>Special Services</span>
+                  </NavLink>
+                </li>
               </ul>
             )}
           </li>
