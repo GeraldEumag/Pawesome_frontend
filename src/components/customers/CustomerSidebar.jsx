@@ -6,7 +6,6 @@ import {
   faCalendarCheck,
   faPaw,
   faShoppingCart,
-  faRobot,
   faSignOutAlt,
   faBars,
   faUser,
@@ -84,17 +83,6 @@ const CustomerSidebar = ({ collapsed, onToggleCollapse }) => {
             </NavLink>
           </li>
           
-          <li className="nav-item">
-            <NavLink
-              to="/customer/chatbot"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              title="ChatBot"
-            >
-              <FontAwesomeIcon icon={faRobot} />
-              {!collapsed && <span>ChatBot</span>}
-            </NavLink>
-          </li>
-
           <li className="nav-item">
             <NavLink
               to="/customer/profile"

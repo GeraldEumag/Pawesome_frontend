@@ -14,6 +14,7 @@ import {
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 import CustomerSidebar from "./CustomerSidebar";
+import CustomerChatbot from "./CustomerChatbot";
 import "./CustomerDashboard.css";
 
 const CustomerDashboard = () => {
@@ -249,6 +250,9 @@ const CustomerDashboard = () => {
           </section>
         )}
       </main>
+      
+      {/* Floating Chatbot */}
+      <CustomerChatbot />
     </div>
   );
 };

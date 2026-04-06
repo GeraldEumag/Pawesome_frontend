@@ -10,6 +10,9 @@ import {
   faSave,
   faTimes,
   faLock,
+  faPaw,
+  faShoppingBag,
+  faHeart,
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -48,6 +51,14 @@ const CustomerProfile = () => {
     currentPassword: false,
     newPassword: false,
     confirmPassword: false,
+  });
+
+  // Statistics (mock data - would come from API)
+  const [stats, setStats] = useState({
+    totalPets: 3,
+    totalAppointments: 12,
+    totalOrders: 8,
+    totalReviews: 5,
   });
 
   // Handle input changes
@@ -183,6 +194,77 @@ const CustomerProfile = () => {
           {message}
         </div>
       )}
+
+      {/* Quick Score Summary */}
+      <div className="score-summary">
+        <h3>Quick Stats</h3>
+        <div className="score-grid">
+          <div className="score-item">
+            <div className="score-icon">
+              <FontAwesomeIcon icon={faPaw} />
+            </div>
+            <div className="score-info">
+              <div className="score-number">{stats.totalPets}</div>
+              <div className="score-label">Pets</div>
+            </div>
+          </div>
+          <div className="score-item">
+            <div className="score-icon">
+              <FontAwesomeIcon icon={faCalendarAlt} />
+            </div>
+            <div className="score-info">
+              <div className="score-number">{stats.totalAppointments}</div>
+              <div className="score-label">Appointments</div>
+            </div>
+          </div>
+          <div className="score-item">
+            <div className="score-icon">
+              <FontAwesomeIcon icon={faShoppingBag} />
+            </div>
+            <div className="score-info">
+              <div className="score-number">{stats.totalOrders}</div>
+              <div className="score-label">Orders</div>
+            </div>
+          </div>
+          <div className="score-item">
+            <div className="score-icon">
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <div className="score-info">
+              <div className="score-number">{stats.totalReviews}</div>
+              <div className="score-label">Reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Statistics Cards */}
+      <div className="stats-grid">
+        <div className="stat-card">
+          <div className="stat-number">{stats.totalPets}</div>
+          <div className="stat-label">
+            <FontAwesomeIcon icon={faPaw} /> My Pets
+          </div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-number">{stats.totalAppointments}</div>
+          <div className="stat-label">
+            <FontAwesomeIcon icon={faCalendarAlt} /> Appointments
+          </div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-number">{stats.totalOrders}</div>
+          <div className="stat-label">
+            <FontAwesomeIcon icon={faShoppingBag} /> Orders
+          </div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-number">{stats.totalReviews}</div>
+          <div className="stat-label">
+            <FontAwesomeIcon icon={faHeart} /> Reviews
+          </div>
+        </div>
+      </div>
 
       {/* Profile Form */}
       <div className="profile-card">
