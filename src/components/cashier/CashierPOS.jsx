@@ -1,33 +1,51 @@
 import React, { useMemo, useState } from "react";
 import "./CashierPOS.css";
+import "./CashierPOS_Enhanced.css";
 
 const categories = [
-  { id: "all", label: "All Menu", icon: "🍽️" },
-  { id: "burger", label: "Burger", icon: "🍔" },
-  { id: "fried", label: "Fried Chicken", icon: "🍗" },
-  { id: "drink", label: "Drink", icon: "🥤" },
-  { id: "coffee", label: "Coffee", icon: "☕" },
-  { id: "dessert", label: "Dessert", icon: "🍰" },
-  { id: "other", label: "Other Menu", icon: "🧁" },
+  { id: "all", label: "All Products", icon: "🐾" },
+  { id: "food", label: "Food", icon: "🍖" },
+  { id: "accessories", label: "Accessories", icon: "🦴" },
+  { id: "grooming", label: "Grooming", icon: "✂️" },
+  { id: "toys", label: "Toys", icon: "🎾" },
+  { id: "health", label: "Health", icon: "💊" },
 ];
 
 const products = [
-  { id: 1, name: "Deluxe Crispy Burger", price: 6.99, category: "burger" },
-  { id: 2, name: "Classic Crispy Burger", price: 4.75, category: "burger" },
-  { id: 3, name: "Special Crispy Burger", price: 5.75, category: "burger" },
-  { id: 4, name: "Special Burger", price: 6.49, category: "burger" },
-  { id: 5, name: "Spicy Chicken Burger", price: 5.49, category: "burger" },
-  { id: 6, name: "Cheeseburger Meal", price: 5.2, category: "burger" },
-  { id: 7, name: "Combo Drumstick", price: 8.99, category: "fried" },
-  { id: 8, name: "Double Cheese Burger", price: 7.25, category: "burger" },
-  { id: 9, name: "Coca Cola", price: 3.0, category: "drink" },
-  { id: 10, name: "Classic Cheeseburger", price: 4.99, category: "burger" },
-  { id: 11, name: "3 Cheese Wings", price: 3.49, category: "fried" },
-  { id: 12, name: "Sprite", price: 3.0, category: "drink" },
-  { id: 13, name: "Chocolate Milkshake", price: 3.5, category: "drink" },
-  { id: 14, name: "3 Drumstick", price: 4.75, category: "fried" },
-  { id: 15, name: "Cappuccino", price: 3.0, category: "coffee" },
-  { id: 16, name: "Ice Cream Cup", price: 2.5, category: "dessert" },
+  // Food Category
+  { id: 1, name: "Premium Dog Food", price: 1200, category: "food", inStock: true, discount: 10, rating: 4.5, reviews: 128 },
+  { id: 2, name: "Cat Kibble", price: 950, category: "food", inStock: true, discount: 0, rating: 4.2, reviews: 89 },
+  { id: 3, name: "Puppy Starter Kit", price: 850, category: "food", inStock: true, discount: 15, rating: 4.8, reviews: 203 },
+  { id: 4, name: "Senior Cat Food", price: 1100, category: "food", inStock: false, discount: 0, rating: 4.6, reviews: 156 },
+  { id: 5, name: "Organic Pet Food", price: 1500, category: "food", inStock: true, discount: 20, rating: 4.9, reviews: 67 },
+  
+  // Accessories Category
+  { id: 6, name: "Leash & Collar Set", price: 450, category: "accessories", inStock: true, discount: 5, rating: 4.3, reviews: 234 },
+  { id: 7, name: "Pet Bed", price: 800, category: "accessories", inStock: true, discount: 10, rating: 4.7, reviews: 189 },
+  { id: 8, name: "Water Fountain", price: 1200, category: "accessories", inStock: true, discount: 0, rating: 4.4, reviews: 145 },
+  { id: 9, name: "Pet Carrier", price: 950, category: "accessories", inStock: false, discount: 0, rating: 4.6, reviews: 98 },
+  { id: 10, name: "GPS Tracker", price: 650, category: "accessories", inStock: true, discount: 15, rating: 4.1, reviews: 76 },
+  
+  // Grooming Category
+  { id: 11, name: "Shampoo", price: 300, category: "grooming", inStock: true, discount: 0, rating: 4.5, reviews: 312 },
+  { id: 12, name: "Brush", price: 200, category: "grooming", inStock: true, discount: 10, rating: 4.2, reviews: 267 },
+  { id: 13, name: "Nail Clippers", price: 150, category: "grooming", inStock: true, discount: 0, rating: 4.0, reviews: 198 },
+  { id: 14, name: "Grooming Kit", price: 450, category: "grooming", inStock: true, discount: 20, rating: 4.8, reviews: 423 },
+  { id: 15, name: "Pet Wipes", price: 120, category: "grooming", inStock: true, discount: 5, rating: 4.3, reviews: 156 },
+  
+  // Toys Category
+  { id: 16, name: "Interactive Ball", price: 250, category: "toys", inStock: true, discount: 10, rating: 4.6, reviews: 289 },
+  { id: 17, name: "Chew Toy Set", price: 180, category: "toys", inStock: true, discount: 0, rating: 4.4, reviews: 167 },
+  { id: 18, name: "Cat Tower", price: 1200, category: "toys", inStock: false, discount: 0, rating: 4.7, reviews: 345 },
+  { id: 19, name: "Puzzle Feeder", price: 350, category: "toys", inStock: true, discount: 15, rating: 4.5, reviews: 234 },
+  { id: 20, name: "Squeaky Toys", price: 120, category: "toys", inStock: true, discount: 0, rating: 4.1, reviews: 145 },
+  
+  // Health Category
+  { id: 21, name: "Vitamins", price: 450, category: "health", inStock: true, discount: 10, rating: 4.6, reviews: 278 },
+  { id: 22, name: "Flea Treatment", price: 280, category: "health", inStock: true, discount: 0, rating: 4.3, reviews: 412 },
+  { id: 23, name: "Dental Care", price: 320, category: "health", inStock: true, discount: 15, rating: 4.4, reviews: 189 },
+  { id: 24, name: "Eye Drops", price: 180, category: "health", inStock: true, discount: 0, rating: 4.2, reviews: 98 },
+  { id: 25, name: "Joint Supplements", price: 520, category: "health", inStock: true, discount: 20, rating: 4.7, reviews: 234 },
 ];
 
 const formatPrice = (value) => `₱${value.toFixed(2)}`;
@@ -35,9 +53,10 @@ const formatPrice = (value) => `₱${value.toFixed(2)}`;
 const CashierPOS = ({ onCheckout }) => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [cart, setCart] = useState([]);
-  const [orderType, setOrderType] = useState("Dine In");
+  const [orderType, setOrderType] = useState("Walk-in");
   const [customer, setCustomer] = useState("");
   const [voucher, setVoucher] = useState("");
+  const [cashReceived, setCashReceived] = useState("");
 
   const filteredProducts = useMemo(() => {
     if (activeCategory === "all") return products;
@@ -48,6 +67,9 @@ const CashierPOS = ({ onCheckout }) => {
   const tax = subtotal * 0.12;
   const discount = voucher.trim() ? 25 : 0;
   const totalAmount = Math.max(subtotal + tax - discount, 0);
+  const changeAmount = cashReceived && parseFloat(cashReceived) >= totalAmount 
+    ? parseFloat(cashReceived) - totalAmount 
+    : 0;
 
   const addToCart = (product) => {
     setCart((prev) => {
@@ -69,7 +91,8 @@ const CashierPOS = ({ onCheckout }) => {
     setCart([]);
     setCustomer("");
     setVoucher("");
-    setOrderType("Dine In");
+    setCashReceived("");
+    setOrderType("Walk-in");
   };
 
   const handleCheckout = () => {
@@ -112,7 +135,7 @@ const CashierPOS = ({ onCheckout }) => {
         <div className="pos-header-row">
           <div>
             <p className="pos-section-label">POS</p>
-            <h2>Product Menu</h2>
+            <h2>Pet Store Products</h2>
           </div>
           <div className="pos-search-bar">
             <input type="search" placeholder="Search products..." />
@@ -136,20 +159,13 @@ const CashierPOS = ({ onCheckout }) => {
       </main>
 
       <aside className="pos-order-panel">
-        <div className="order-top-actions">
-          <button type="button" className="quick-action">Customer</button>
-          <button type="button" className="quick-action">Tables</button>
-          <button type="button" className="quick-action">Discount</button>
-          <button type="button" className="quick-action">Save Bill</button>
-        </div>
-
         <div className="order-details-card">
           <div className="order-details-header">
             <h3>Order Details</h3>
           </div>
 
           <div className="order-type-switch">
-            {["Dine In", "Take Away"].map((type) => (
+            {["Walk-in", "Delivery"].map((type) => (
               <button
                 key={type}
                 type="button"
@@ -200,15 +216,48 @@ const CashierPOS = ({ onCheckout }) => {
             </div>
           </div>
 
-          <label className="voucher-field">
-            <span>Voucher code</span>
-            <input
-              type="text"
-              value={voucher}
-              onChange={(e) => setVoucher(e.target.value)}
-              placeholder="Enter code"
-            />
-          </label>
+          <div className="payment-section">
+            <div className="cash-payment">
+              <label className="cash-field">
+                <span>💵 Cash Received</span>
+                <input
+                  type="number"
+                  value={cashReceived}
+                  onChange={(e) => setCashReceived(e.target.value)}
+                  placeholder="0.00"
+                  step="0.01"
+                  min="0"
+                />
+              </label>
+              
+              {cashReceived && parseFloat(cashReceived) > 0 && (
+                <div className="change-display">
+                  <div className="summary-row">
+                    <span>Total Amount</span>
+                    <strong>{formatPrice(totalAmount)}</strong>
+                  </div>
+                  <div className="summary-row">
+                    <span>Cash Received</span>
+                    <strong>{formatPrice(parseFloat(cashReceived) || 0)}</strong>
+                  </div>
+                  <div className="summary-row change-row">
+                    <span>Change</span>
+                    <strong className="change-amount">
+                      {changeAmount > 0 ? formatPrice(changeAmount) : 'Insufficient Amount'}
+                    </strong>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="quick-cash-buttons">
+              <span>Quick Amount:</span>
+              <button type="button" onClick={() => setCashReceived('1000')}>₱1000</button>
+              <button type="button" onClick={() => setCashReceived('500')}>₱500</button>
+              <button type="button" onClick={() => setCashReceived('200')}>₱200</button>
+              <button type="button" onClick={() => setCashReceived('100')}>₱100</button>
+            </div>
+          </div>
 
           <label className="customer-field">
             <span>Customer Name</span>
@@ -220,7 +269,12 @@ const CashierPOS = ({ onCheckout }) => {
             />
           </label>
 
-          <button type="button" className="checkout-button" onClick={handleCheckout} disabled={cart.length === 0}>
+          <button 
+            type="button" 
+            className="checkout-button" 
+            onClick={handleCheckout} 
+            disabled={cart.length === 0 || !cashReceived || parseFloat(cashReceived) < totalAmount}
+          >
             Process Transaction
           </button>
         </div>
