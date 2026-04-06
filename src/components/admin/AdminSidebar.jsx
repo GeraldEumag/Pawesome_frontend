@@ -12,8 +12,6 @@ import {
   faUser,
   faBuilding,
   faMoneyBillWave,
-  faChevronDown,
-  faChevronRight,
   faDollarSign,
   faFileInvoiceDollar,
 } from "@fortawesome/free-solid-svg-icons";
@@ -52,7 +50,8 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
           <li className="nav-item">
             <NavLink
               to="/admin"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className="nav-link"
+              end
               title="Dashboard"
             >
               <FontAwesomeIcon icon={faHome} />
@@ -63,7 +62,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
           <li className="nav-item">
             <NavLink
               to="/admin/users"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className="nav-link"
               title="Users"
             >
               <FontAwesomeIcon icon={faUsers} />
@@ -74,7 +73,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
           <li className="nav-item">
             <NavLink
               to="/admin/profile"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className="nav-link"
               title="Profile"
             >
               <FontAwesomeIcon icon={faUser} />
@@ -90,19 +89,13 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
             >
               <FontAwesomeIcon icon={faMoneyBillWave} />
               {!collapsed && <span>Payroll</span>}
-              {!collapsed && (
-                <FontAwesomeIcon 
-                  icon={payrollExpanded ? faChevronDown : faChevronRight} 
-                  className="dropdown-arrow"
-                />
-              )}
             </div>
             {!collapsed && (
               <ul className={`nav-sublist ${payrollExpanded ? 'expanded' : ''}`}>
                 <li className="nav-subitem">
                   <NavLink
                     to="/admin/payroll"
-                    className={({ isActive }) => (isActive ? "active" : "")}
+                    className="nav-link"
                     title="Payroll Overview"
                   >
                     <FontAwesomeIcon icon={faMoneyBillWave} />
@@ -112,7 +105,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
                 <li className="nav-subitem">
                   <NavLink
                     to="/admin/payroll/salaries"
-                    className={({ isActive }) => (isActive ? "active" : "")}
+                    className="nav-link"
                     title="Salary Management"
                   >
                     <FontAwesomeIcon icon={faDollarSign} />
@@ -122,7 +115,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
                 <li className="nav-subitem">
                   <NavLink
                     to="/admin/payroll/reports"
-                    className={({ isActive }) => (isActive ? "active" : "")}
+                    className="nav-link"
                     title="Payroll Reports"
                   >
                     <FontAwesomeIcon icon={faFileInvoiceDollar} />
@@ -136,7 +129,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
           <li className="nav-item">
             <NavLink
               to="/admin/history"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className="nav-link"
               title="History"
             >
               <FontAwesomeIcon icon={faHistory} />
@@ -147,7 +140,7 @@ const AdminSidebar = ({ collapsed, onToggleCollapse }) => {
           <li className="nav-item">
             <NavLink
               to="/admin/reports"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className="nav-link"
               title="Reports"
             >
               <FontAwesomeIcon icon={faChartBar} />

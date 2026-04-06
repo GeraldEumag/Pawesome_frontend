@@ -1,9 +1,9 @@
-/* Inventory Sidebar Styles - Pink Theme */
+/* Inventory Sidebar Styles - Baby Blue & Pink Theme */
 
 .inventory-sidebar {
   width: 260px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
-  color: white;
+  background: linear-gradient(135deg, #ADD8E6 0%, #FFC0CB 100%);
+  color: #000000 !important;
   padding: 0;
   position: fixed;
   left: 0;
@@ -13,7 +13,12 @@
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 10px rgba(255, 107, 157, 0.3);
+  box-shadow: 2px 0 10px rgba(173, 216, 230, 0.3);
+}
+
+/* Force all sidebar text to be black */
+.inventory-sidebar * {
+  color: #000000 !important;
 }
 
 .inventory-sidebar.collapsed {

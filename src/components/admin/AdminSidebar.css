@@ -1,9 +1,9 @@
-﻿/* Admin Sidebar Styles - Pink Theme */
+﻿/* Admin Sidebar Styles - Baby Blue & Pink Theme */
 
 .admin-sidebar {
   width: 240px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
-  color: white;
+  background: linear-gradient(135deg, #ADD8E6 0%, #FFC0CB 100%);
+  color: #000000 !important;
   padding: 0;
   position: fixed;
   left: 0;
@@ -13,7 +13,12 @@
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 10px rgba(255, 107, 157, 0.3);
+  box-shadow: 2px 0 10px rgba(173, 216, 230, 0.3);
+}
+
+/* Force all sidebar text to be black */
+.admin-sidebar * {
+  color: #000000 !important;
 }
 
 .admin-sidebar.collapsed {
@@ -80,22 +85,25 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  color: rgba(255,255,255,0.8);
+  color: #000000 !important;
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 0;
   position: relative;
+  font-weight: 600;
+  background: transparent;
 }
 
 .nav-item a:hover {
-  background: rgba(255,255,255,0.1);
-  color: white;
+  background: rgba(173, 216, 230, 0.2);
+  color: #000000 !important;
 }
 
 .nav-item a.active {
-  background: rgba(255,255,255,0.2);
-  color: white;
-  border-left: 4px solid #ffeaa7;
+  background: rgba(173, 216, 230, 0.3);
+  color: #000000 !important;
+  border-left: 4px solid #ADD8E6;
+  font-weight: 700;
 }
 
 /* Dropdown Styles */
@@ -104,16 +112,18 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  color: rgba(255,255,255,0.8);
+  color: #000000 !important;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 0;
   position: relative;
+  font-weight: 600;
+  background: transparent;
 }
 
 .nav-dropdown-header:hover {
-  background: rgba(255,255,255,0.1);
-  color: white;
+  background: rgba(173, 216, 230, 0.2);
+  color: #000000 !important;
 }
 
 .nav-dropdown-header span {
@@ -123,10 +133,17 @@
   text-overflow: ellipsis;
 }
 
-.dropdown-arrow {
-  font-size: 0.8rem !important;
-  width: 12px !important;
-  transition: transform 0.3s ease;
+/* Remove all dropdown arrow styles */
+.dropdown-arrow,
+.dropdown-arrow-single {
+  display: none !important;
+}
+
+/* Ensure no arrows appear */
+.nav-dropdown-header .dropdown-arrow,
+.nav-dropdown-header .dropdown-arrow:only-child,
+.nav-dropdown-header .dropdown-arrow:not(:last-child) {
+  display: none !important;
 }
 
 .nav-sublist {
@@ -151,24 +168,26 @@
   align-items: center;
   gap: 1rem;
   padding: 0.5rem 1rem 0.5rem 2rem;
-  color: rgba(255,255,255,0.7);
+  color: #000000 !important;
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 0;
   position: relative;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.9rem;
+  background: transparent;
 }
 
 .nav-subitem a:hover {
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.9);
+  background: rgba(173, 216, 230, 0.15);
+  color: #000000 !important;
 }
 
 .nav-subitem a.active {
-  background: rgba(255,255,255,0.1);
-  color: white;
-  border-left: 4px solid #ffd700;
+  background: rgba(173, 216, 230, 0.25);
+  color: #000000 !important;
+  border-left: 4px solid #ADD8E6;
+  font-weight: 600;
 }
 
 .nav-item a.active::before {

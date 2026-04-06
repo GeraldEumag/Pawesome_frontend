@@ -29,6 +29,8 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -122,6 +124,14 @@ const Register = () => {
       // Redirect to customer dashboard
       navigate("/customer");
     }, 1500);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -291,29 +301,49 @@ const Register = () => {
 
                 <div className="form-group">
                   <label htmlFor="password">Password *</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    className={errors.password ? "error" : ""}
-                    placeholder="Create a password (min. 6 characters)"
-                  />
+                  <div className="password-input-group">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      className={errors.password ? "error" : ""}
+                      placeholder="Create a password (min. 6 characters)"
+                    />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={togglePasswordVisibility}
+                      disabled={isSubmitting}
+                    >
+                      {showPassword ? "👁️‍🗨️" : "👁️"}
+                    </button>
+                  </div>
                   {errors.password && <span className="error-message">{errors.password}</span>}
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="confirmPassword">Confirm Password *</label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    className={errors.confirmPassword ? "error" : ""}
-                    placeholder="Confirm your password"
-                  />
+                  <div className="password-input-group">
+                    <input
+                      type={showConfirmPassword ? "text" : "password"}
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      className={errors.confirmPassword ? "error" : ""}
+                      placeholder="Confirm your password"
+                    />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={toggleConfirmPasswordVisibility}
+                      disabled={isSubmitting}
+                    >
+                      {showConfirmPassword ? "👁️‍🗨️" : "👁️"}
+                    </button>
+                  </div>
                   {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
                 </div>
               </div>

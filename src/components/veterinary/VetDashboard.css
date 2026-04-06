@@ -1,15 +1,16 @@
-/* Veterinary Dashboard Styles - Pink Theme */
+/* Veterinary Dashboard Styles - Baby Blue & Pink Theme */
 
 .vet-dashboard {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd1dc 50%, #ff6b9d 100%);
+  background: linear-gradient(135deg, #ADD8E6 0%, #ffffff 50%, #FFC0CB 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #000000;
 }
 
 .vet-dashboard.dark {
-  background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
-  color: #f8f9fa;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+  color: #ffffff;
 }
 
 .vet-dashboard.collapsed .veterinary-sidebar {
@@ -43,7 +44,7 @@
 .vet-navbar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0rem 2rem;
   border-bottom: 1px solid rgba(255, 107, 157, 0.1);
   display: flex;
   align-items: center;

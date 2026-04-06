@@ -184,36 +184,12 @@ const Login = () => {
               <button type="submit" className="login-btn" disabled={isSubmitting}>
                 {isSubmitting ? "Signing In..." : "Sign In"}
               </button>
-              
-              <div className="register-link">
-                <span>Don't have an account?</span>
-                <Link to="/register" className="link">Create Account</Link>
-              </div>
             </div>
           </form>
-
-          {/* Demo Accounts Info */}
-          <div className="demo-accounts">
-            <h4>🔓 Demo Accounts</h4>
-            <div className="demo-grid">
-              <div className="demo-account">
-                <span className="role-badge admin">Admin</span>
-                <code>admin / admin123</code>
-              </div>
-              <div className="demo-account">
-                <span className="role-badge customer">Customer</span>
-                <code>customer / customer123</code>
-              </div>
-              <div className="demo-account">
-                <span className="role-badge vet">Vet</span>
-                <code>vet / vet123</code>
-              </div>
-              <div className="demo-account">
-                <span className="role-badge cashier">Cashier</span>
-                <code>cashier / cashier123</code>
-              </div>
-            </div>
-            <p className="demo-note">Use any of these accounts to explore the system</p>
+          
+          <div className="register-link">
+            <span>Don't have an account?</span>
+            <Link to="/register" className="link">Create Account</Link>
           </div>
         </div>
       </div>

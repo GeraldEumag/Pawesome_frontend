@@ -1,13 +1,15 @@
-/* Customer Dashboard Styles - Pink Theme */
+/* Customer Dashboard Styles - Baby Blue & Pink Theme */
 
 .customer-dashboard {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd1dc 50%, #ff6b9d 100%);
+  background: linear-gradient(135deg, #ADD8E6 0%, #ffffff 50%, #FFC0CB 100%);
+  color: #000000;
 }
 
 .customer-dashboard.dark {
-  background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+  color: #ffffff;
 }
 
 .customer-dashboard.collapsed .customer-main {
@@ -26,7 +28,7 @@
 .customer-navbar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  padding: 1rem 2rem;
+  padding: 1rem 2rem .40rem 2rem; /* Reduced bottom padding */
   border-bottom: 1px solid rgba(255, 107, 157, 0.1);
   display: flex;
   align-items: center;

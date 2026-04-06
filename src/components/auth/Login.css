@@ -1,8 +1,8 @@
-/* Pawesome Retreat Login Page - Pink Theme */
+/* Pawesome Retreat Login Page - Baby Blue & Pink Theme */
 
 .login-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd1dc 50%, #ff6b9d 100%);
+  background: linear-gradient(135deg, #ADD8E6 0%, #ffffff 50%, #FFC0CB 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+  box-shadow: 0 20px 60px rgba(173, 216, 230, 0.3);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }

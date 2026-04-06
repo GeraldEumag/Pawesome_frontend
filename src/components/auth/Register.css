@@ -1,8 +1,8 @@
-/* Pawesome Retreat Registration Page - Pink Theme */
+/* Pawesome Retreat Registration Page - Baby Blue & Pink Theme */
 
 .register-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd1dc 50%, #ff6b9d 100%);
+  background: linear-gradient(135deg, #ADD8E6 0%, #ffffff 50%, #FFC0CB 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   display: flex;
   align-items: center;
@@ -12,11 +12,11 @@
 
 .register-background {
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+  box-shadow: 0 20px 60px rgba(173, 216, 230, 0.3);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -32,18 +32,18 @@
 }
 
 .register-header .logo h1 {
-  color: #ff6b9d;
+  color: #ADD8E6;
   font-size: 2.5rem;
   margin: 0;
   font-weight: 700;
-  background: linear-gradient(135deg, #ff6b9d, #ff4757);
+  background: linear-gradient(135deg, #ADD8E6, #FFC0CB);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .register-header .logo span {
-  color: #ff6b9d;
+  color: #FFC0CB;
   font-size: 1rem;
   display: block;
   margin-top: -0.3rem;
@@ -52,14 +52,14 @@
 }
 
 .register-header h2 {
-  color: #2d3436;
+  color: #000000;
   font-size: 2rem;
   margin: 1rem 0 0.5rem;
   font-weight: 600;
 }
 
 .register-header p {
-  color: #636e72;
+  color: #000000;
   font-size: 1.1rem;
   margin: 0;
 }
@@ -76,7 +76,7 @@
   background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   padding: 2rem;
-  border: 1px solid rgba(255, 107, 157, 0.1);
+  border: 1px solid rgba(173, 216, 230, 0.3);
 }
 
 .section-header {
@@ -85,12 +85,12 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(255, 107, 157, 0.1);
+  border-bottom: 2px solid rgba(173, 216, 230, 0.3);
 }
 
 .section-icon {
   font-size: 1.5rem;
-  background: linear-gradient(135deg, #ff6b9d, #ff4757);
+  background: linear-gradient(135deg, #ADD8E6, #FFC0CB);
   color: white;
   width: 50px;
   height: 50px;
@@ -101,7 +101,7 @@
 }
 
 .section-header h3 {
-  color: #2d3436;
+  color: #000000;
   font-size: 1.3rem;
   margin: 0;
   font-weight: 600;
@@ -226,15 +226,50 @@
 }
 
 .login-link .link {
-  color: #ff6b9d;
+  color: #ADD8E6;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .login-link .link:hover {
-  color: #ff4757;
+  color: #FFC0CB;
   text-decoration: underline;
+}
+
+/* Password Input Groups */
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-group input {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #636e72;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.password-toggle:hover {
+  color: #ADD8E6;
+  background: rgba(173, 216, 230, 0.1);
+}
+
+.password-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Responsive Design */
